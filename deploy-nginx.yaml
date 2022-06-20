@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vasundhara-nginx
+spec:
+  selector:
+    matchLabels:
+      run: vasundhara-nginx
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        run: vasundhara-nginx
+    spec:
+      containers:
+      - name: vasundhara-nginx
+        image: nginx
+        ports:
+        - containerPort: 80
