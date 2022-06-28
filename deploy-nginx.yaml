@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: vasundhara-nginx
+  name: inspec-nginx-demo-app
 spec:
   selector:
     matchLabels:
-      run: vasundhara-nginx
+      run: inspec-nginx-demo-app
   replicas: 4
   template:
     metadata:
       labels:
-        run: vasundhara-nginx
+        run: inspec-nginx-demo-app
     spec:
       containers:
-      - name: vasundhara-nginx
+      - name: inspec-nginx-demo-app
         image: nginx
         ports:
         - containerPort: 80
